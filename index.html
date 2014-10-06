@@ -13,32 +13,34 @@
 </head>
 <body>
 
-  <div id="header">
-    <h1 id="header-title">Title</h1>
+  <div id="content">
+    <div id="header">
+      <h1 id="header-title">Title</h1>
 
-    <nav id="header-nav">
-      <ul id="header-nav-school">
-        <li>A</li>
-        <li>B</li>
-      </ul>
-      <ul>
-        <li>日本語</li>
-        <li>英語</li>
-      </ul>
-    </nav>
-  </div>
+      <nav id="header-nav">
+        <ul id="header-nav-school">
+          <li>A</li>
+          <li>B</li>
+        </ul>
+        <ul>
+          <li>日本語</li>
+          <li>英語</li>
+        </ul>
+      </nav>
+    </div>
 
-  <div>
-    <svg id="graph">
-      <g>
-        <line x1="0" x2="1700" y1="450" y2="450" class="axis-line" />
-        <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
-      </g>
-      <g v-repeat="fields" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
-        <circle v-attr="r:r" />
-        <text text-anchor="middle">{{title}}</text>
-      </g>
-    </svg>
+    <div>
+      <svg id="graph">
+        <g>
+          <line x1="0" x2="1700" y1="450" y2="450" class="axis-line" />
+          <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
+        </g>
+        <g v-repeat="fields" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
+          <circle v-attr="r:r" />
+          <text text-anchor="middle">{{title}}</text>
+        </g>
+      </svg>
+    </div>
   </div>
 
 </body>
