@@ -14,10 +14,9 @@
 
   <div>
     <svg id="graph">
-      <g>
-        <circle v-repeat="fields" cx="{{x}}" cy="{{y}}" r="{{r}}">
-          <text>{{title}}</text>
-        </circle>
+      <g v-repeat="fields" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
+        <circle v-attr="r:r"></circle>
+        <text text-anchor="middle">{{title}}</text>
       </g>
     </svg>
   </div>
