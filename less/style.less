@@ -1,7 +1,73 @@
+.clearfix {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+body {
+  padding: 50px 50px 0 50px;
+}
+
+#header {
+  .clearfix;
+  position: relative;
+  height: 170px;
+  border-bottom: 2px solid #ff1776;
+  margin: 0 0 45px 0;
+  width: 1700px;
+  #header-title {
+    color: #ff1776;
+    margin: 0;
+    float: left;
+    font-size: 50px;
+    position: absolute;
+    bottom: 40px;
+  }
+  #header-nav {
+    .clearfix;
+    float: left;
+    position: absolute;
+    bottom: 40px;
+    left: 500px;
+    ul {
+      .clearfix;
+      float: left;
+      margin: 0 50px 0 0;
+      list-style: none;
+      padding: 0;
+      li {
+        float: left;
+        margin: 0 30px 0 0;
+        font-size: 30px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    #header-nav-school {
+      li {
+        &:first-child {
+          color: #0d1971;
+        }
+        &:last-child {
+          color: #d80000;
+        }
+      }
+    }
+  }
+}
+
 svg {
   width: 1700px;
   height: 750px;
-  border: 1px solid blue;
 
   circle {
     fill: white;
