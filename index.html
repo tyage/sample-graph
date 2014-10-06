@@ -48,7 +48,9 @@
           <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
         </g>
         <g v-repeat="fields" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
-          <circle v-attr="r:r" v-on="click:select(this)" />
+          <circle v-attr="r: r" v-on="click:select(this)" v-class="
+            selected: selected
+          " />
           <text text-anchor="middle" v-on="click:select(this)">{{title}}</text>
         </g>
       </svg>

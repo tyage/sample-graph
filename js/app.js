@@ -15,6 +15,10 @@ $(function() {
     },
     methods: {
       select: function(field) {
+        if (this.selectedField) {
+          this.selectedField.selected = false;
+        }
+        field.$data.selected = true;
         this.selectedField = field.$data;
       },
       unselect: function() {
