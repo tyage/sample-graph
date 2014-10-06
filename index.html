@@ -29,15 +29,27 @@
       </nav>
     </div>
 
-    <div>
-      <svg id="graph">
+    <div id="graph">
+      <div id="selected-field" v-if="selectedField" v-with="selectedField" v-style="
+        top: y + 'px'
+      ">
+        <p id="selected-field-title">{{title}}</p>
+        <p id="back-graph" v-on="click:unselect">back to graph</p>
+        <ul id="selected-field-people">
+          <li v-repeat="people">{{$value}}</li>
+        </ul>
+        <p id="selected-field-delta" v-style="
+          left: x + 'px'
+        "></p>
+      </div>
+      <svg>
         <g>
           <line x1="0" x2="1700" y1="450" y2="450" class="axis-line" />
           <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
         </g>
         <g v-repeat="fields" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
-          <circle v-attr="r:r" />
-          <text text-anchor="middle">{{title}}</text>
+          <circle v-attr="r:r" v-on="click:select(this)" />
+          <text text-anchor="middle" v-on="click:select(this)">{{title}}</text>
         </g>
       </svg>
     </div>

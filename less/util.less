@@ -11,3 +11,13 @@
     visibility: hidden;
   }
 }
+
+.delta(@width, @color) {
+  content: "";
+  position: absolute;
+  bottom: -@width * 2;
+  right: 50%;
+  border: @width solid transparent;
+  margin-right: -@width;
+  border-top-color: @color;
+}
