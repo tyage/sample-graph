@@ -22,6 +22,7 @@ $(function() {
         this.selectedField = field.$data;
       },
       unselect: function() {
+        this.selectedField.selected = false;
         this.selectedField = null;
       }
     }
