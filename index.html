@@ -15,8 +15,12 @@
   <div>
     <svg id="graph">
       <g v-repeat="fields" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
-        <circle v-attr="r:r"></circle>
+        <circle v-attr="r:r" />
         <text text-anchor="middle">{{title}}</text>
+      </g>
+      <g>
+        <line x1="0" x2="1700" y1="370" y2="370" stroke-width="2" stroke="red" />
+        <line x1="850" x2="850" y1="0" y2="750" stroke-width="2" stroke="red" />
       </g>
     </svg>
   </div>
