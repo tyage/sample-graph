@@ -6,5 +6,11 @@
 
 ```sh
 $ npm install
-$ ./node_modules/bower/bin/bower install
+$ ./node_modules/.bin/bower install
+```
+
+## less watch
+
+```sh
+$ ./node_modules/.bin/gulp
 ```
