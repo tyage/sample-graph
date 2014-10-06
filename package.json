@@ -1,0 +1,24 @@
+{
+  "name": "sample-graph",
+  "version": "0.0.0",
+  "description": "[see this page](http://tyage.github.io/smaple-graph/)",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "~1.3.12"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tyage/sample-graph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyage/sample-graph/issues"
+  },
+  "homepage": "https://github.com/tyage/sample-graph"
+}
