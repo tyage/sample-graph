@@ -4,7 +4,11 @@
   "description": "[see this page](http://tyage.github.io/smaple-graph/)",
   "main": "index.js",
   "dependencies": {
-    "bower": "~1.3.12"
+    "bower": "~1.3.12",
+    "less": "~1.7.5",
+    "gulp": "~3.8.8",
+    "gulp-less": "~1.3.6",
+    "gulp-watch": "~1.0.7"
   },
   "devDependencies": {
   },
