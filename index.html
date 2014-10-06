@@ -19,8 +19,8 @@
 
       <nav id="header-nav">
         <ul id="header-nav-school">
-          <li>A</li>
-          <li>B</li>
+          <li v-on="click: school = 0">A</li>
+          <li v-on="click: school = 1">B</li>
         </ul>
         <ul>
           <li>日本語</li>
@@ -34,7 +34,7 @@
         top: y + 'px'
       ">
         <p id="selected-field-title">{{title}}</p>
-        <p id="back-graph" v-on="click:unselect">back to graph</p>
+        <p id="back-graph" v-on="click: unselect">back to graph</p>
         <ul id="selected-field-people">
           <li v-repeat="people">{{$value}}</li>
         </ul>
@@ -47,11 +47,11 @@
           <line x1="0" x2="1700" y1="450" y2="450" class="axis-line" />
           <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
         </g>
-        <g v-repeat="fields" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
-          <circle v-attr="r: r" v-on="click:select(this)" v-class="
+        <g v-repeat="fields[school]" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
+          <circle v-attr="r: r" v-on="click: select(this)" v-class="
             selected: selected
           " />
-          <text text-anchor="middle" v-on="click:select(this)">{{title}}</text>
+          <text text-anchor="middle" v-on="click: select(this)">{{title}}</text>
         </g>
       </svg>
     </div>
