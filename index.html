@@ -29,7 +29,10 @@
       </nav>
     </div>
 
-    <div id="graph">
+    <div id="graph" v-class="
+      kyoto: school === 0,
+      kobe: school === 1
+    ">
       <div id="selected-field" v-if="selectedField" v-with="selectedField">
         <p id="selected-field-title">{{title}}</p>
         <p id="back-graph" v-on="click: unselect">back to graph</p>
