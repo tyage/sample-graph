@@ -19,8 +19,12 @@
 
       <nav id="header-nav">
         <ul id="header-nav-school">
-          <li v-on="click: changeSchool(0)" class="kyoto">A</li>
-          <li v-on="click: changeSchool(1)" class="kobe">B</li>
+          <li v-on="click: changeSchool(0)" class="kyoto" v-class="
+            selected: school === 0
+          ">A</li>
+          <li v-on="click: changeSchool(1)" class="kobe" v-class="
+            selected: school === 1
+          ">B</li>
         </ul>
         <ul id="header-nav-lang">
           <li class="japanase">日本語</li>

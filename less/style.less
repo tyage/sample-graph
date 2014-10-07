@@ -44,8 +44,17 @@
         margin: 0 60px 0 0;
         &.kobe {
           &:before {
-            background: @kobe-color;
             outline-color: @kobe-color;
+          }
+        }
+        &.selected {
+          &:before {
+            background: @kyoto-color;
+          }
+          &.kobe {
+            &:before {
+              background: @kobe-color;
+            }
           }
         }
         &:before {
@@ -53,7 +62,7 @@
           width: 25px;
           height: 25px;
           display: inline-block;
-          background: @kyoto-color;
+          background: #fff;
           border: 5px solid white;
           outline: 2px solid @kyoto-color;
           margin: 0 20px 0 0;
