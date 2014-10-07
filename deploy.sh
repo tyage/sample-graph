@@ -8,3 +8,4 @@ npm install
 git add -A
 git commit -m "update site"
 git push origin gh-pages
+git checkout master

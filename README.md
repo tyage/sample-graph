@@ -12,5 +12,11 @@ $ ./node_modules/.bin/bower install
 ## less watch
 
 ```sh
-$ ./node_modules/.bin/gulp
+$ ./node_modules/.bin/gulp watch
+```
+
+## deploy to github pages
+
+```sh
+$ ./deploy.sh
 ```
