@@ -43,18 +43,23 @@
         float: left;
         margin: 0 60px 0 0;
         &.kobe {
+          color: @kobe-color;
           &:before {
             outline-color: @kobe-color;
           }
         }
-        &.selected {
+        &.kyoto {
+          color: @kyoto-color;
           &:before {
-            background: @kyoto-color;
+            outline-color: @kyoto-color;
           }
-          &.kobe {
-            &:before {
-              background: @kobe-color;
-            }
+        }
+        &.selected {
+          &.kobe:before {
+            background: @kobe-color;
+          }
+          &.kyoto:before {
+            background: @kyoto-color;
           }
         }
         &:before {
@@ -64,14 +69,8 @@
           display: inline-block;
           background: #fff;
           border: 5px solid white;
-          outline: 2px solid @kyoto-color;
+          outline: 2px solid #fff;
           margin: 0 20px 0 0;
-        }
-        &:first-child {
-          color: #0d1971;
-        }
-        &:last-child {
-          color: #d80000;
         }
       }
     }
