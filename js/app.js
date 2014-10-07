@@ -39,6 +39,12 @@ $(function() {
         // transition to center
         d3.select('#graph-group').transition()
           .attr('transform', 'translate(0, 0)');
+      },
+      changeSchool: function(school) {
+        if (school !== this.school) {
+          this.school = school;
+          this.unselect();
+        }
       }
     }
   });

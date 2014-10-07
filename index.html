@@ -19,8 +19,8 @@
 
       <nav id="header-nav">
         <ul id="header-nav-school">
-          <li v-on="click: school = 0">A</li>
-          <li v-on="click: school = 1">B</li>
+          <li v-on="click: changeSchool(0)">A</li>
+          <li v-on="click: changeSchool(1)">B</li>
         </ul>
         <ul>
           <li>日本語</li>
@@ -29,7 +29,10 @@
       </nav>
     </div>
 
-    <div id="graph">
+    <div id="graph" v-class="
+      kyoto: school === 0,
+      kobe: school === 1
+    ">
       <div id="selected-field" v-if="selectedField" v-with="selectedField">
         <p id="selected-field-title">{{title}}</p>
         <p id="back-graph" v-on="click: unselect">back to graph</p>
