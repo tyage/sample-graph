@@ -43,9 +43,23 @@
         float: left;
         margin: 0 60px 0 0;
         &.kobe {
+          color: @kobe-color;
           &:before {
-            background: @kobe-color;
             outline-color: @kobe-color;
+          }
+        }
+        &.kyoto {
+          color: @kyoto-color;
+          &:before {
+            outline-color: @kyoto-color;
+          }
+        }
+        &.selected {
+          &.kobe:before {
+            background: @kobe-color;
+          }
+          &.kyoto:before {
+            background: @kyoto-color;
           }
         }
         &:before {
@@ -53,16 +67,10 @@
           width: 25px;
           height: 25px;
           display: inline-block;
-          background: @kyoto-color;
+          background: #fff;
           border: 5px solid white;
-          outline: 2px solid @kyoto-color;
+          outline: 2px solid #fff;
           margin: 0 20px 0 0;
-        }
-        &:first-child {
-          color: #0d1971;
-        }
-        &:last-child {
-          color: #d80000;
         }
       }
     }
@@ -72,12 +80,24 @@
       li {
         font-size: 30px;
         margin: 0 0 10px 0;
-        color: @japanese-color;
+        &.japanese {
+          color: @japanese-color;
+          &:before {
+            box-shadow: 0 0 0 2px @japanese-color;
+          }
+        }
         &.english {
           color: @english-color;
           &:before {
-            background: @english-color;
             box-shadow: 0 0 0 2px @english-color;
+          }
+        }
+        &.selected {
+          &.japanese:before {
+            background: @japanese-color;
+          }
+          &.english:before {
+            background: @english-color;
           }
         }
         &:before {
@@ -85,9 +105,7 @@
           width: 20px;
           height: 20px;
           display: inline-block;
-          background: @japanese-color;
           border: 3px solid white;
-          box-shadow: 0 0 0 2px @japanese-color;
           margin: 0 15px 0 0;
           border-radius: 20px;
           position: relative;

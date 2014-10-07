@@ -16,7 +16,8 @@ $(function() {
           { title: 'GD', x: 880, y: 310, r: 80, people: ['test1', 'test2'] }
         ]
       ],
-      school: 0
+      school: 0,
+      language: 'ja'
     },
     methods: {
       select: function(field) {
@@ -33,7 +34,9 @@ $(function() {
           .attr('transform', 'translate(' + x + ', ' + y + ')');
       },
       unselect: function() {
-        this.selectedField.selected = false;
+        if (this.selectedField) {
+          this.selectedField.selected = false;
+        }
         this.selectedField = null;
 
         // transition to center
@@ -45,6 +48,9 @@ $(function() {
           this.school = school;
           this.unselect();
         }
+      },
+      changeLanguage: function(language) {
+        this.language = language;
       }
     }
   });
