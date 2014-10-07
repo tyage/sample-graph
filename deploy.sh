@@ -1,6 +1,7 @@
 #!/bin/sh
 
 git checkout gh-pages
+git pull origin gh-pages
 git merge master
 npm install
 ./node_modules/.bin/bower install
