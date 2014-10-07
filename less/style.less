@@ -4,7 +4,7 @@
 @kyoto-color: #00266f;
 
 #content {
-  padding: 50px 50px 0 50px;
+  padding: 30px 30px 0 30px;
   width: 1700px;
 }
 
@@ -18,7 +18,7 @@
     color: #ff1776;
     margin: 0;
     float: left;
-    font-size: 50px;
+    font-size: 60px;
     position: absolute;
     bottom: 40px;
   }
@@ -26,30 +26,75 @@
     .clearfix;
     float: left;
     position: absolute;
-    bottom: 40px;
-    left: 500px;
+    bottom: 20px;
+    right: 0;
     ul {
       .clearfix;
       float: left;
-      margin: 0 50px 0 0;
+      margin: 0;
       list-style: none;
-      padding: 0;
-      li {
-        float: left;
-        margin: 0 30px 0 0;
-        font-size: 30px;
-        &:last-child {
-          margin: 0;
-        }
-      }
+      padding: 20px 0 0 60px;
+      border-left: 1px solid #ddd;
+      height: 70px;
     }
     #header-nav-school {
       li {
+        font-size: 45px;
+        float: left;
+        margin: 0 60px 0 0;
+        &.kobe {
+          &:before {
+            background: @kobe-color;
+            outline-color: @kobe-color;
+          }
+        }
+        &:before {
+          content: " ";
+          width: 25px;
+          height: 25px;
+          display: inline-block;
+          background: @kyoto-color;
+          border: 5px solid white;
+          outline: 2px solid @kyoto-color;
+          margin: 0 20px 0 0;
+        }
         &:first-child {
           color: #0d1971;
         }
         &:last-child {
           color: #d80000;
+        }
+      }
+    }
+    #header-nav-lang {
+      @japanese-color: #ff0000;
+      @english-color: #264cd4;
+      li {
+        font-size: 30px;
+        margin: 0 0 10px 0;
+        color: @japanese-color;
+        &.english {
+          color: @english-color;
+          &:before {
+            background: @english-color;
+            box-shadow: 0 0 0 2px @english-color;
+          }
+        }
+        &:before {
+          content: " ";
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          background: @japanese-color;
+          border: 3px solid white;
+          box-shadow: 0 0 0 2px @japanese-color;
+          margin: 0 15px 0 0;
+          border-radius: 20px;
+          position: relative;
+          top: 5px;
+        }
+        &:first-child {
+          margin-top: -20px;
         }
       }
     }
