@@ -1,6 +1,6 @@
 # sample graph
 
-[see this page](http://tyage.github.io/smaple-graph/)
+[see this page](http://tyage.github.io/sample-graph/)
 
 ## initialization
 
