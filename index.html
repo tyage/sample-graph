@@ -30,28 +30,31 @@
     </div>
 
     <div id="graph">
-      <div id="selected-field" v-if="selectedField" v-with="selectedField" v-style="
-        top: y + 'px'
-      ">
+      <div id="selected-field" v-if="selectedField" v-with="selectedField">
         <p id="selected-field-title">{{title}}</p>
         <p id="back-graph" v-on="click: unselect">back to graph</p>
         <ul id="selected-field-people">
           <li v-repeat="people">{{$value}}</li>
         </ul>
-        <p id="selected-field-delta" v-style="
-          left: x + 'px'
-        "></p>
+        <p id="selected-field-delta"></p>
       </div>
       <svg>
-        <g>
-          <line x1="0" x2="1700" y1="450" y2="450" class="axis-line" />
-          <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
-        </g>
-        <g v-repeat="fields[school]" v-attr="transform: 'translate(' + x + ', ' + y + ')'">
-          <circle v-attr="r: r" v-on="click: select(this)" v-class="
-            selected: selected
-          " />
-          <text text-anchor="middle" v-on="click: select(this)">{{title}}</text>
+        <g v-attr="
+          transform: 'translate(' + (850 - (selectedField.x || 850)) + ', ' +
+            (375 - (selectedField.y || 375)) + ')'
+        ">
+          <g>
+            <line x1="0" x2="1700" y1="450" y2="450" class="axis-line" />
+            <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
+          </g>
+          <g v-repeat="fields[school]" v-attr="
+            transform: 'translate(' + x + ', ' + y + ')'
+          ">
+            <circle v-attr="r: r" v-on="click: select(this)" v-class="
+              selected: selected
+            " />
+            <text text-anchor="middle" v-on="click: select(this)">{{title}}</text>
+          </g>
         </g>
       </svg>
     </div>
