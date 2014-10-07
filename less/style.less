@@ -4,7 +4,7 @@
 @kyoto-color: #00266f;
 
 #content {
-  padding: 50px 50px 0 50px;
+  padding: 30px 30px 0 30px;
   width: 1700px;
 }
 
@@ -18,7 +18,7 @@
     color: #ff1776;
     margin: 0;
     float: left;
-    font-size: 50px;
+    font-size: 60px;
     position: absolute;
     bottom: 40px;
   }
@@ -27,7 +27,7 @@
     float: left;
     position: absolute;
     bottom: 40px;
-    left: 500px;
+    right: 0;
     ul {
       .clearfix;
       float: left;
@@ -45,6 +45,23 @@
     }
     #header-nav-school {
       li {
+        font-size: 45px;
+        &.kobe {
+          &:before {
+            background: @kobe-color;
+            outline-color: @kobe-color;
+          }
+        }
+        &:before {
+          content: " ";
+          width: 25px;
+          height: 25px;
+          display: inline-block;
+          background: @kyoto-color;
+          border: 5px solid white;
+          outline: 2px solid @kyoto-color;
+          margin: 0 20px 0 0;
+        }
         &:first-child {
           color: #0d1971;
         }
