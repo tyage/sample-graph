@@ -25,10 +25,20 @@ $(function() {
         }
         field.$data.selected = true;
         this.selectedField = field.$data;
+
+        // transition to selected field
+        var x = this.selectedField ? (850 - this.selectedField.x) : 0;
+        var y = this.selectedField ? (375 - this.selectedField.y) : 0;
+        d3.select('#graph-group').transition()
+          .attr('transform', 'translate(' + x + ', ' + y + ')');
       },
       unselect: function() {
         this.selectedField.selected = false;
         this.selectedField = null;
+
+        // transition to center
+        d3.select('#graph-group').transition()
+          .attr('transform', 'translate(0, 0)');
       }
     }
   });
