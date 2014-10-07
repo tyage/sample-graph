@@ -33,7 +33,9 @@ $(function() {
           .attr('transform', 'translate(' + x + ', ' + y + ')');
       },
       unselect: function() {
-        this.selectedField.selected = false;
+        if (this.selectedField) {
+          this.selectedField.selected = false;
+        }
         this.selectedField = null;
 
         // transition to center
