@@ -33,20 +33,14 @@
       float: left;
       margin: 0;
       list-style: none;
-      padding: 30px 0 0 60px;
-      border-left: 1px solid #eee;
+      padding: 20px 0 0 60px;
+      border-left: 1px solid #ddd;
       height: 70px;
-      li {
-        float: left;
-        font-size: 30px;
-        &:last-child {
-          margin: 0;
-        }
-      }
     }
     #header-nav-school {
       li {
         font-size: 45px;
+        float: left;
         margin: 0 60px 0 0;
         &.kobe {
           &:before {
@@ -69,6 +63,38 @@
         }
         &:last-child {
           color: #d80000;
+        }
+      }
+    }
+    #header-nav-lang {
+      @japanese-color: #ff0000;
+      @english-color: #264cd4;
+      li {
+        font-size: 30px;
+        margin: 0 0 10px 0;
+        color: @japanese-color;
+        &.english {
+          color: @english-color;
+          &:before {
+            background: @english-color;
+            box-shadow: 0 0 0 2px @english-color;
+          }
+        }
+        &:before {
+          content: " ";
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          background: @japanese-color;
+          border: 3px solid white;
+          box-shadow: 0 0 0 2px @japanese-color;
+          margin: 0 15px 0 0;
+          border-radius: 20px;
+          position: relative;
+          top: 5px;
+        }
+        &:first-child {
+          margin-top: -20px;
         }
       }
     }
