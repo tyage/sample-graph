@@ -80,12 +80,24 @@
       li {
         font-size: 30px;
         margin: 0 0 10px 0;
-        color: @japanese-color;
+        &.japanese {
+          color: @japanese-color;
+          &:before {
+            box-shadow: 0 0 0 2px @japanese-color;
+          }
+        }
         &.english {
           color: @english-color;
           &:before {
-            background: @english-color;
             box-shadow: 0 0 0 2px @english-color;
+          }
+        }
+        &.selected {
+          &.japanese:before {
+            background: @japanese-color;
+          }
+          &.english:before {
+            background: @english-color;
           }
         }
         &:before {
@@ -93,9 +105,7 @@
           width: 20px;
           height: 20px;
           display: inline-block;
-          background: @japanese-color;
           border: 3px solid white;
-          box-shadow: 0 0 0 2px @japanese-color;
           margin: 0 15px 0 0;
           border-radius: 20px;
           position: relative;
