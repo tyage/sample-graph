@@ -15,4 +15,4 @@ gulp.task('less', function() {
 gulp.task('watch', function() {
   gulp.watch([LESS_ROOT + '*.less'], ['less']);
 });
-gulp.task('default', ['less', 'watch']);
+gulp.task('default', ['less']);
