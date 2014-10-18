@@ -4,14 +4,14 @@ $(function() {
     data: {
       fields: [
         [
-          { title: 'TM', x: 300, y: 100, r: 100, people: ['test1', 'test2'] },
-          { title: 'PF', x: 380, y: 250, r: 75, people: ['test1', 'test2'] },
-          { title: 'CM', x: 500, y: 330, r: 75, people: ['test1', 'test2'] },
-          { title: 'FR', x: 80, y: 300, r: 80, people: ['test1', 'test2'] },
-          { title: 'EQ', x: 360, y: 450, r: 80, people: ['test1', 'test2'] },
-          { title: 'SD', x: 200, y: 600, r: 80, people: ['test1', 'test2'] },
-          { title: 'OR', x: 880, y: 110, r: 80, people: ['test1', 'test2'] },
-          { title: 'GD', x: 880, y: 310, r: 80, people: ['test1', 'test2'] }
+          { title: 'TM', x: 350, y: 150, r: 100, people: ['test1', 'test2'] },
+          { title: 'PF', x: 430, y: 300, r: 75, people: ['test1', 'test2'] },
+          { title: 'CM', x: 550, y: 380, r: 75, people: ['test1', 'test2'] },
+          { title: 'FR', x: 130, y: 350, r: 80, people: ['test1', 'test2'] },
+          { title: 'EQ', x: 410, y: 500, r: 80, people: ['test1', 'test2'] },
+          { title: 'SD', x: 250, y: 650, r: 80, people: ['test1', 'test2'] },
+          { title: 'OR', x: 930, y: 160, r: 80, people: ['test1', 'test2'] },
+          { title: 'GD', x: 930, y: 360, r: 80, people: ['test1', 'test2'] }
         ], [
           { title: 'GD', x: 880, y: 310, r: 80, people: ['test1', 'test2'] }
         ]
@@ -29,7 +29,7 @@ $(function() {
 
         // transition to selected field
         var x = this.selectedField ? (850 - this.selectedField.x) : 0;
-        var y = this.selectedField ? (375 - this.selectedField.y) : 0;
+        var y = this.selectedField ? (750 - this.selectedField.y) : 0;
         d3.select('#graph-group').transition()
           .attr('transform', 'translate(' + x + ', ' + y + ')');
       },
