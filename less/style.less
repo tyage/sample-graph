@@ -79,48 +79,6 @@
           }
         }
       }
-      #graph-header-nav-lang {
-        @japanese-color: #ff0000;
-        @english-color: #264cd4;
-        li {
-          font-size: 30px;
-          margin: 0 0 10px 0;
-          &.japanese {
-            color: @japanese-color;
-            &:before {
-              box-shadow: 0 0 0 2px @japanese-color;
-            }
-          }
-          &.english {
-            color: @english-color;
-            &:before {
-              box-shadow: 0 0 0 2px @english-color;
-            }
-          }
-          &.selected {
-            &.japanese:before {
-              background: @japanese-color;
-            }
-            &.english:before {
-              background: @english-color;
-            }
-          }
-          &:before {
-            content: " ";
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            border: 3px solid white;
-            margin: 0 15px 0 0;
-            border-radius: 20px;
-            position: relative;
-            top: 5px;
-          }
-          &:first-child {
-            margin-top: -20px;
-          }
-        }
-      }
     }
   }
 
