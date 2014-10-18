@@ -13,6 +13,23 @@
 </head>
 <body>
 
+<div id="header">
+  <h1></h1>
+  <nav>
+    <ul>
+      <li>
+        <button>ログイン</button>
+      </li>
+      <li>
+        <button>新規登録</button>
+      </li>
+      <li>
+        <button>Japanese</button>
+      </li>
+    </ul>
+  </nav>
+</div>
+
 <div id="content">
   <div id="graph">
     <div id="graph-header">
@@ -27,14 +44,6 @@
             selected: school === 1
           ">B</li>
         </ul>
-        <ul id="graph-header-nav-lang">
-          <li v-on="click: changeLanguage('ja')" class="japanese" v-class="
-            selected: language === 'ja'
-          ">日本語</li>
-          <li v-on="click: changeLanguage('en')" class="english" v-class="
-            selected: language === 'en'
-          ">English</li>
-        </ul>
       </nav>
     </div>
 
@@ -44,7 +53,7 @@
     ">
       <div id="selected-field" v-if="selectedField" v-with="selectedField">
         <p id="selected-field-title">{{title}}</p>
-        <p id="back-graph" v-on="click: unselect">back to graph</p>
+        <p id="back-graph" v-on="click: unselect">マップに戻る</p>
         <ul id="selected-field-people">
           <li v-repeat="people">{{$value}}</li>
         </ul>
@@ -53,8 +62,8 @@
       <svg>
         <g id="graph-group">
           <g>
-            <line x1="0" x2="1700" y1="450" y2="450" class="axis-line" />
-            <line x1="880" x2="880" y1="0" y2="750" class="axis-line" />
+            <line x1="50" x2="1650" y1="450" y2="450" class="axis-line" />
+            <line x1="850" x2="850" y1="50" y2="700" class="axis-line" />
           </g>
           <g v-repeat="fields[school]" v-attr="
             transform: 'translate(' + x + ', ' + y + ')'
