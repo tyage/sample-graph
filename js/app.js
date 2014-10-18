@@ -1,6 +1,6 @@
 $(function() {
   new Vue({
-    el: '#content',
+    el: '#graph',
     data: {
       fields: [
         [

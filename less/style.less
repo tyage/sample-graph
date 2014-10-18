@@ -2,197 +2,198 @@
 
 @kobe-color: #c40000;
 @kyoto-color: #00266f;
-
-#content {
-  padding: 30px 30px 0 30px;
-  width: 1700px;
-}
-
-#header {
-  .clearfix;
-  position: relative;
-  height: 120px;
-  border-bottom: 2px solid #ff1776;
-  margin: 0 0 45px 0;
-  #header-title {
-    color: #ff1776;
-    margin: 0;
-    float: left;
-    font-size: 60px;
-    position: absolute;
-    bottom: 40px;
-  }
-  #header-nav {
-    .clearfix;
-    float: left;
-    position: absolute;
-    bottom: 20px;
-    right: 0;
-    ul {
-      .clearfix;
-      float: left;
-      margin: 0;
-      list-style: none;
-      padding: 20px 0 0 60px;
-      border-left: 1px solid #ddd;
-      height: 70px;
-    }
-    #header-nav-school {
-      li {
-        font-size: 45px;
-        float: left;
-        margin: 0 60px 0 0;
-        &.kobe {
-          color: @kobe-color;
-          &:before {
-            outline-color: @kobe-color;
-          }
-        }
-        &.kyoto {
-          color: @kyoto-color;
-          &:before {
-            outline-color: @kyoto-color;
-          }
-        }
-        &.selected {
-          &.kobe:before {
-            background: @kobe-color;
-          }
-          &.kyoto:before {
-            background: @kyoto-color;
-          }
-        }
-        &:before {
-          content: " ";
-          width: 25px;
-          height: 25px;
-          display: inline-block;
-          background: #fff;
-          border: 5px solid white;
-          outline: 2px solid #fff;
-          margin: 0 20px 0 0;
-        }
-      }
-    }
-    #header-nav-lang {
-      @japanese-color: #ff0000;
-      @english-color: #264cd4;
-      li {
-        font-size: 30px;
-        margin: 0 0 10px 0;
-        &.japanese {
-          color: @japanese-color;
-          &:before {
-            box-shadow: 0 0 0 2px @japanese-color;
-          }
-        }
-        &.english {
-          color: @english-color;
-          &:before {
-            box-shadow: 0 0 0 2px @english-color;
-          }
-        }
-        &.selected {
-          &.japanese:before {
-            background: @japanese-color;
-          }
-          &.english:before {
-            background: @english-color;
-          }
-        }
-        &:before {
-          content: " ";
-          width: 20px;
-          height: 20px;
-          display: inline-block;
-          border: 3px solid white;
-          margin: 0 15px 0 0;
-          border-radius: 20px;
-          position: relative;
-          top: 5px;
-        }
-        &:first-child {
-          margin-top: -20px;
-        }
-      }
-    }
-  }
-}
+@graph-thema-color: #ff1776;
 
 #graph {
-  position: relative;
-  &.kobe {
+  padding: 30px 30px 0 30px;
+  width: 1700px;
+  border: 5px solid @graph-thema-color;
+  #graph-header {
+    .clearfix;
+    position: relative;
+    height: 120px;
+    border-bottom: 2px solid @graph-thema-color;
+    margin: 0 0 45px 0;
+    #graph-header-title {
+      color: @graph-thema-color;
+      margin: 0;
+      float: left;
+      font-size: 60px;
+      position: absolute;
+      bottom: 40px;
+    }
+    #graph-header-nav {
+      .clearfix;
+      float: left;
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      ul {
+        .clearfix;
+        float: left;
+        margin: 0;
+        list-style: none;
+        padding: 20px 0 0 60px;
+        border-left: 1px solid #ddd;
+        height: 70px;
+      }
+      #graph-header-nav-school {
+        li {
+          font-size: 45px;
+          float: left;
+          margin: 0 60px 0 0;
+          &.kobe {
+            color: @kobe-color;
+            &:before {
+              outline-color: @kobe-color;
+            }
+          }
+          &.kyoto {
+            color: @kyoto-color;
+            &:before {
+              outline-color: @kyoto-color;
+            }
+          }
+          &.selected {
+            &.kobe:before {
+              background: @kobe-color;
+            }
+            &.kyoto:before {
+              background: @kyoto-color;
+            }
+          }
+          &:before {
+            content: " ";
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            background: #fff;
+            border: 5px solid white;
+            outline: 2px solid #fff;
+            margin: 0 20px 0 0;
+          }
+        }
+      }
+      #graph-header-nav-lang {
+        @japanese-color: #ff0000;
+        @english-color: #264cd4;
+        li {
+          font-size: 30px;
+          margin: 0 0 10px 0;
+          &.japanese {
+            color: @japanese-color;
+            &:before {
+              box-shadow: 0 0 0 2px @japanese-color;
+            }
+          }
+          &.english {
+            color: @english-color;
+            &:before {
+              box-shadow: 0 0 0 2px @english-color;
+            }
+          }
+          &.selected {
+            &.japanese:before {
+              background: @japanese-color;
+            }
+            &.english:before {
+              background: @english-color;
+            }
+          }
+          &:before {
+            content: " ";
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 3px solid white;
+            margin: 0 15px 0 0;
+            border-radius: 20px;
+            position: relative;
+            top: 5px;
+          }
+          &:first-child {
+            margin-top: -20px;
+          }
+        }
+      }
+    }
+  }
+
+  #graph-body {
+    position: relative;
+    &.kobe {
+      #selected-field {
+        border-bottom-color: @kobe-color;
+        color: @kobe-color;
+        #selected-field-delta {
+          &:before {
+            .delta(20px, @kobe-color);
+          }
+        }
+      }
+      svg {
+        circle {
+          stroke: @kobe-color;
+          &.selected {
+            fill: @kobe-color;
+          }
+        }
+        text {
+          fill: @kobe-color;
+        }
+      }
+    }
     #selected-field {
-      border-bottom-color: @kobe-color;
-      color: @kobe-color;
+      position: absolute;
+      top: -60px;
+      border-bottom: 1px solid @kyoto-color;
+      width: 100%;
+      height: 300px;
+      background: white;
+      color: @kyoto-color;
       #selected-field-delta {
+        position: absolute;
+        left: 850px;
+        bottom: -16px;
         &:before {
-          .delta(20px, @kobe-color);
+          .delta(20px, @kyoto-color);
+        }
+        &:after {
+          .delta(19px, white);
+        }
+      }
+      #selected-field-title {
+        margin: 0 0 30px 0;
+        font-size: 60px;
+      }
+      #back-graph {
+        margin: 0 0 30px 0;
+        font-size: 17px;
+      }
+      #selected-field-people {
+        li {
+          font-size: 30px;
         }
       }
     }
     svg {
+      width: 1700px;
+      height: 750px;
       circle {
-        stroke: @kobe-color;
+        fill: white;
+        stroke: @kyoto-color;
+        stroke-width: 2px;
         &.selected {
-          fill: @kobe-color;
+          fill: @kyoto-color;
         }
       }
+      .axis-line {
+        stroke-width: 2px;
+        stroke: #ffd6e3;
+      }
       text {
-        fill: @kobe-color;
-      }
-    }
-  }
-  #selected-field {
-    position: absolute;
-    top: -60px;
-    border-bottom: 1px solid @kyoto-color;
-    width: 100%;
-    height: 300px;
-    background: white;
-    color: @kyoto-color;
-    #selected-field-delta {
-      position: absolute;
-      left: 850px;
-      bottom: -16px;
-      &:before {
-        .delta(20px, @kyoto-color);
-      }
-      &:after {
-        .delta(19px, white);
-      }
-    }
-    #selected-field-title {
-      margin: 0 0 30px 0;
-      font-size: 60px;
-    }
-    #back-graph {
-      margin: 0 0 30px 0;
-      font-size: 17px;
-    }
-    #selected-field-people {
-      li {
-        font-size: 30px;
-      }
-    }
-  }
-  svg {
-    width: 1700px;
-    height: 750px;
-    circle {
-      fill: white;
-      stroke: @kyoto-color;
-      stroke-width: 2px;
-      &.selected {
         fill: @kyoto-color;
       }
-    }
-    .axis-line {
-      stroke-width: 2px;
-      stroke: #ffd6e3;
-    }
-    text {
-      fill: @kyoto-color;
     }
   }
 }
