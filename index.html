@@ -13,12 +13,12 @@
 </head>
 <body>
 
-  <div id="content">
-    <div id="header">
-      <h1 id="header-title">Title</h1>
+  <div id="graph">
+    <div id="graph-header">
+      <h1 id="graph-header-title">Title</h1>
 
-      <nav id="header-nav">
-        <ul id="header-nav-school">
+      <nav id="graph-header-nav">
+        <ul id="graph-header-nav-school">
           <li v-on="click: changeSchool(0)" class="kyoto" v-class="
             selected: school === 0
           ">A</li>
@@ -26,7 +26,7 @@
             selected: school === 1
           ">B</li>
         </ul>
-        <ul id="header-nav-lang">
+        <ul id="graph-header-nav-lang">
           <li v-on="click: changeLanguage('ja')" class="japanese" v-class="
             selected: language === 'ja'
           ">日本語</li>
@@ -37,7 +37,7 @@
       </nav>
     </div>
 
-    <div id="graph" v-class="
+    <div id="graph-body" v-class="
       kyoto: school === 0,
       kobe: school === 1
     ">
