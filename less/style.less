@@ -3,50 +3,60 @@
 @kobe-color: #c40000;
 @kyoto-color: #00266f;
 @graph-thema-color: #ff1776;
+@content-width: 960px;
+@graph-width: @content-width;
+@graph-height: 540px;
+@graph-header-height: 80px;
+@graph-content-height: @graph-height - @graph-header-height;
 
 #content {
-  width: 1700px;
+  width: @content-width;
   margin: 0 auto;
 }
 
 #graph {
-  width: 1700px;
-  border: 5px solid @graph-thema-color;
+  width: @graph-width;
+  border: 3px solid @graph-thema-color;
   position: relative;
   #graph-header {
     .clearfix;
     position: relative;
-    height: 120px;
+    height: @graph-header-height;
     border-bottom: 2px solid @graph-thema-color;
-    margin: 50px 50px 0 50px;
-    #graph-header-title {
-      color: @graph-thema-color;
-      margin: 0;
-      float: left;
-      font-size: 70px;
+    margin: 0 20px 0 20px;
+    #graph-header-field {
       position: absolute;
-      bottom: 20px;
-      font-weight: normal;
+      bottom: 15px;
+      p {
+        margin: 0;
+        float: left;
+        color: #ddd;
+        font-size: 17px;
+        margin: 15px 0 0 30px;
+        &.selected {
+          color: @graph-thema-color;
+          font-size: 36px;
+          margin: 0;
+        }
+      }
     }
     #graph-header-nav {
       .clearfix;
       float: left;
       position: absolute;
-      bottom: 30px;
+      bottom: 20px;
       right: 0;
       ul {
         .clearfix;
         float: left;
         margin: 0;
         list-style: none;
-        padding: 0 0 0 60px;
-        height: 70px;
       }
       #graph-header-nav-school {
         li {
-          font-size: 45px;
+          font-size: 28px;
           float: left;
-          margin: 0 60px 0 0;
+          margin: 0 40px 0 0;
           &:last-child {
             margin: 0;
           }
@@ -72,13 +82,13 @@
           }
           &:before {
             content: " ";
-            width: 25px;
-            height: 25px;
+            width: 17px;
+            height: 17px;
             display: inline-block;
             background: #fff;
-            border: 7px solid #fff;
+            border: 4px solid #fff;
             outline: 2px solid #fff;
-            margin: 0 20px 0 0;
+            margin: 0 10px 0 0;
           }
         }
       }
@@ -86,14 +96,14 @@
   }
 
   #graph-body {
-    height: 750px;
+    height: @graph-content-height;
     &.kobe {
       #selected-field {
         border-bottom-color: @kobe-color;
         color: @kobe-color;
         #selected-field-delta {
           &:before {
-            .delta(40px, @kobe-color);
+            .delta(28px, @kobe-color);
           }
         }
       }
@@ -112,54 +122,65 @@
     #selected-field {
       position: absolute;
       top: 0;
-      bottom: 170px;
+      bottom: 90px;
       border-bottom: 2px solid @kyoto-color;
-      width: 1600px;
+      width: @graph-width - 60px;
       background: white;
       color: @kyoto-color;
-      padding: 30px 50px;
+      padding: 25px 30px;
       #selected-field-delta {
         position: absolute;
-        left: 850px;
+        left: @graph-width / 2;
         bottom: -16px;
         &:before {
-          .delta(40px, @kyoto-color);
+          .delta(28px, @kyoto-color);
         }
         &:after {
-          .delta(38px, white);
+          .delta(26px, white);
         }
       }
       #selected-field-title {
-        margin: 0 0 30px 0;
-        font-size: 60px;
+        margin: 0 0 15px 0;
+        font-size: 45px;
       }
       #back-graph {
-        margin: 0 0 30px 0;
+        margin: 0 0 90px 0;
         font-size: 17px;
       }
       #selected-field-people {
+        margin: 0;
+        padding: 0 0 0 20px;
         li {
-          font-size: 30px;
+          font-size: 20px;
+          margin: 0 0 20px 0;
         }
       }
     }
     svg {
-      width: 1700px;
-      height: 750px;
-      circle {
-        fill: white;
-        stroke: @kyoto-color;
-        stroke-width: 2px;
-        &.selected {
-          fill: @kyoto-color;
-        }
-      }
+      width: @graph-width;
+      height: @graph-content-height;
       .axis-line {
         stroke-width: 2px;
         stroke: #ffd6e3;
       }
-      text {
-        fill: @kyoto-color;
+      .field-text {
+        font-size: 14px;
+        fill: #ffd6e3;
+      }
+      .graph-circle {
+        circle {
+          fill: white;
+          stroke: @kyoto-color;
+          stroke-width: 1.5px;
+          &.selected {
+            fill: @kyoto-color;
+          }
+        }
+        text {
+          fill: @kyoto-color;
+          font-size: 12px;
+          font-weight: bold;
+        }
       }
     }
   }
