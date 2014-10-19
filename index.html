@@ -33,7 +33,10 @@
 <div id="content">
   <div id="graph">
     <div id="graph-header">
-      <h1 id="graph-header-title">Title</h1>
+      <div id="graph-header-field">
+        <p class="selected">A</p>
+        <p>B</p>
+      </div>
 
       <nav id="graph-header-nav">
         <ul id="graph-header-nav-school">
@@ -62,16 +65,29 @@
       <svg>
         <g id="graph-group">
           <g>
-            <line x1="50" x2="1650" y1="450" y2="450" class="axis-line" />
-            <line x1="850" x2="850" y1="50" y2="700" class="axis-line" />
+            <line v-attr="x1: axis.x.start, x2: axis.x.end, y1: axis.y.middle, y2: axis.y.middle"
+              class="axis-line" />
+            <line v-attr="y1: axis.y.start, y2: axis.y.end, x1: axis.x.middle, x2: axis.x.middle"
+              class="axis-line" />
+            <text v-attr="x: axis.x.middle + 5, y: axis.y.start" class="field-text"
+              alignment-baseline="before-edge">A</text>
+            <text v-attr="x: axis.x.middle + 5, y: axis.y.end" class="field-text">B</text>
+            <text v-attr="x: axis.x.start, y: axis.y.middle + 5" class="field-text"
+              alignment-baseline="before-edge">C</text>
+            <text v-attr="x: axis.x.end, y: axis.y.middle + 5" class="field-text"
+              alignment-baseline="before-edge" text-anchor="end">D</text>
           </g>
           <g v-repeat="fields[school]" v-attr="
             transform: 'translate(' + x + ', ' + y + ')'
-          ">
+          " class="graph-circle">
             <circle v-attr="r: r" v-on="click: select(this)" v-class="
               selected: selected
             " />
-            <text text-anchor="middle" v-on="click: select(this)">{{title}}</text>
+            <text text-anchor="middle" v-attr="
+              y: breakedTitles.length * -16 / 2
+            " v-on="click: select(this)">
+              <tspan v-repeat="text: breakedTitles" alignment-baseline="after-edge" dy="16" x="0">{{text}}</tspan>
+            </text>
           </g>
         </g>
       </svg>
