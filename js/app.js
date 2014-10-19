@@ -17,7 +17,8 @@ $(function() {
           { title: 'F', breakedTitles: ['F'],
             x: 161, y: 233, r: 40, people: ['test1', 'test2'] }
         ], [
-          { title: 'tests', x: 470, y: 168, r: 38, people: ['test1', 'test2'] }
+          { title: 'A', breakedTitles: ['A'],
+            x: 170, y: 79, r: 50, people: ['test1', 'test2'] }
         ]
       ],
       school: 0,
